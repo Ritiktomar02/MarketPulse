@@ -1,16 +1,109 @@
-# React + Vite
+# MarketPulse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MarketPulse is a full-stack authentication and cryptocurrency market dashboard application.
 
-Currently, two official plugins are available:
+The project provides user authentication, Google OAuth login, profile management, cryptocurrency market data, coin details, price trends, and price history graphs using external APIs.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Authentication
 
-## Expanding the ESLint configuration
+- User registration
+- User login
+- Google OAuth authentication
+- User logout
+- Authentication using HTTP-only cookies
+- Protected routes
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### User Profile
+
+- View profile details
+- Edit name
+- Edit email
+- Edit phone
+- Edit bio
+- Change password
+- Upload profile photo
+- Provide profile image URL
+
+### Cryptocurrency Market
+
+- View cryptocurrency coins
+- Search coins
+- View current coin price
+- View 24-hour price change
+- View price trend
+- View 24-hour high and low
+- Select individual coins
+- View price history graph
+- 1-hour candle interval
+- 24 data points for approximately 24 hours of history
+
+### Environment Data
+
+- Fetch environmental temperature data
+- Display available location and temperature information
+
+---
+
+## Tech Stack
+
+### Frontend
+
+- React.js
+- React Router
+- Tailwind CSS
+- Axios
+- Recharts
+- React Icons
+- Google OAuth
+
+### Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT
+- bcrypt
+- Google OAuth
+- REST APIs
+
+### External APIs
+
+- Binance API
+- Singapore Data.gov.sg Air Temperature API
+
+---
+
+## Project Structure
+
+```text
+MarketPulse/
+│
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── .env
+│   ├── server.js
+│   └── package.json
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── .env
+│   ├── index.html
+│   └── package.json
+│
+└── README.md
