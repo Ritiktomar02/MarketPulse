@@ -11,6 +11,8 @@ import connectDB from "./config/db-connection.js";
 
 import userRoute from "./routes/user-route.js";
 import profileRoutes from "./routes/profile-route.js";
+import marketRoute from "./routes/market-route.js";
+import weatherRoute from "./routes/weather-route.js";
 
 const app = express();
 
@@ -32,6 +34,8 @@ app.use(cookieParser());
 
 app.use("/api/user", userRoute);
 app.use("/api/profile", profileRoutes);
+app.use("/api/market", marketRoute);
+app.use("/api/weather", weatherRoute);
 
 app.get("/", (req, res) => {
   res.json({
