@@ -1,21 +1,39 @@
-const BASE_URL = import.meta.env.VITE_BASE_URL || "/api";
+import axios from "axios";
+
+const BASE_URL =
+  import.meta.env.VITE_BASE_URL || "http://localhost:8080";
+
+const api = axios.create({
+  baseURL: BASE_URL,
+  withCredentials: true,
+});
 
 export const AUTH = {
-  REGISTER: `${BASE_URL}/user/register`,
-  LOGIN: `${BASE_URL}/user/login`,
-  GOOGLE_LOGIN: `${BASE_URL}/user/google-login`,
-  LOGOUT: `${BASE_URL}/user/logout`,
-  REFRESH: `${BASE_URL}/user/refresh`,
-  PROFILE: `${BASE_URL}/user/profile`,
-  UPLOAD_PHOTO: `${BASE_URL}/user/profile/photo`,
+  REGISTER: "/api/user/register",
+  LOGIN: "/api/user/login",
+  GOOGLE_LOGIN: "/api/user/google",
+  LOGOUT: "/api/user/logout",
+};
+
+export const PROFILE = {
+  GET: "/api/profile/get",
+  UPDATE: "/api/profile/update",
+  UPDATE_PASSWORD: "/api/profile/update-password",
+  UPDATE_PICTURE: "/api/profile/update-picture",
 };
 
 export const MARKET = {
-  ALL_COINS: `${BASE_URL}/market/coins`,
-  COIN: (symbol) => `${BASE_URL}/market/coins/${symbol}`,
-  COIN_GRAPH: (symbol) => `${BASE_URL}/market/coins/${symbol}/graph`,
+  ALL_COINS: "/api/market/coins",
+
+  COIN: (symbol) =>
+    `/api/market/${symbol}`,
+
+  COIN_HISTORY: (symbol) =>
+    `/api/market/${symbol}/history`,
 };
 
 export const WEATHER = {
-  AIR_TEMPERATURE: `${BASE_URL}/weather/air-temperature`,
+  GET: "/api/weather",
 };
+
+export default api;
